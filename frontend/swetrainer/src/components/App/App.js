@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Dashboard from '../Dashboard/Dashboard';
+import Dashboard from '../NavPages/Dashboard';
 import Login from '../Login/Login';
 import useToken from './useToken';
 import About from '../NavPages/About';
 import JobBoard from '../NavPages/JobBoard';
 import InterviewQuestions from '../NavPages/InterviewQuestions';
+import Logout from '../Login/Logout'
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logout_user from '../Login/Logout';
 
 
 function setToken(userToken) {
@@ -26,22 +28,22 @@ function getToken() {
 
 function App() {
 
-  // const { token, setToken } = useToken(); 
+  const { token, setToken } = useToken(); 
 
-  // if(!token) {
-  //   return <Login setToken={setToken} />
-  // }
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
 
   return (
     <div className="wrapper">
       {/* <img src={require('./logo.png')} width={'30%'}/> */}
       <Navbar bg="light" expand="lg">
           <Container>
-          <Navbar.Brand href="/About">
+          <Navbar.Brand>
             <img
-              src="../App/logo.svg"
-              width="200"
-              height="30"
+              src="/logo.png"
+              width="125px"
+              height="50px"
               className="d-inline-block align-top"
               alt="SWEtrainer logo"
             />
@@ -54,9 +56,10 @@ function App() {
                 <Nav.Link href="JobBoard">Job Board</Nav.Link>
                 <Nav.Link href="InterviewQuestions">Interview Questions</Nav.Link>
                 <Nav.Link href="About">About</Nav.Link>
-                  {/* <Navbar.Text text-align={'right'}>
-                    You are logged in
-                  </Navbar.Text> */}
+                <Navbar.Collapse className="justify-content-end">
+                 <button id="logout_button" onClick={logout_now}>
+                Logout</button>
+                </Navbar.Collapse>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -71,6 +74,11 @@ function App() {
       </Router>
     </div>
   );
+}
+
+function logout_now() {
+  sessionStorage.clear();
+  window.location.reload();
 }
 
 export default App;

@@ -3,3 +3,60 @@
   flex-direction: column;
   align-items: center;
 }
+
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  }
+  
+  h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  }
+  
+  form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  }
+  
+  p {
+  margin-bottom: 0.5rem;
+  }
+  
+  input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  }
+  
+  button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  background-color: #0070C0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+  }
+  
+  button:hover {
+  background-color: #40d74f;
+  }

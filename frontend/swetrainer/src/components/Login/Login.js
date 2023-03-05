@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Login.css';
+import { TOKEN_URL } from '../../constants';
+import { SIGNUP_URL } from '../../constants';
 
 async function loginUser(credentials) {
- return fetch('http://localhost:8080/login', {
+ return fetch(TOKEN_URL, {
    method: 'POST',
    headers: {
      'Content-Type': 'application/json'
@@ -12,6 +14,17 @@ async function loginUser(credentials) {
  })
    .then(data => data.json())
 }
+
+async function signupUser(credentials) {
+  return fetch(SIGNUP_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(credentials)
+  })
+    .then(data => data.json())
+ }
 
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
@@ -28,7 +41,12 @@ export default function Login({ setToken }) {
 
   return(
     <div className="login-wrapper">
-      <h1>Please Log In</h1>
+            <img
+              src="/logo.png"
+              width="250px"
+              className="d-inline-block align-top"
+              alt="SWEtrainer logo"
+            />
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>

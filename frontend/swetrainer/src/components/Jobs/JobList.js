@@ -8,7 +8,7 @@ class JobList extends Component {
   render() {
     const jobs = this.props.jobs;
     return (
-      <Table dark>
+      <Table light>
         <thead>
           <tr>
             <th>Title</th>

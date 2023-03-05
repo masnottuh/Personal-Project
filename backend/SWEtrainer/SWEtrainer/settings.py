@@ -40,8 +40,20 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'JobBoard',
-    # 'Salaries'
+    'accounts',
+    'rest_framework.authtoken',
+
 ]
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated', # protects every resource by default
+#     ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication', # how we will authenticate
+#     ]
+# }
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
