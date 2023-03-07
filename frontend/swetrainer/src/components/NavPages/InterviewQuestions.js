@@ -1,10 +1,11 @@
 import React from 'react';
+
 const InterviewQuestions = () =>{
   return (
-    <div>
-      <h3>Interview Questions</h3>
+    <div className="centered">
+      <h3>Interview Questions: Hone your skills below!</h3>
       <div>
-        Post Interview Questions
+      <div class="se-widget" data-widget="hThGnEi9GG"></div>
       </div>
     </div>
   );

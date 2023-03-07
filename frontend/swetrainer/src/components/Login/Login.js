@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './Login.css';
 import { TOKEN_URL } from '../../constants';
-import { SIGNUP_URL } from '../../constants';
+// import { SIGNUP_URL } from '../../constants';
 
 async function loginUser(credentials) {
  return fetch(TOKEN_URL, {
@@ -15,16 +15,16 @@ async function loginUser(credentials) {
    .then(data => data.json())
 }
 
-async function signupUser(credentials) {
-  return fetch(SIGNUP_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
+// async function signupUser(credentials) {
+//   return fetch(SIGNUP_URL, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(credentials)
+//   })
+//     .then(data => data.json())
+//  }
 
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
@@ -57,7 +57,7 @@ export default function Login({ setToken }) {
           <input type="password" onChange={e => setPassword(e.target.value)} />
         </label>
         <div>
-          <button type="submit">Submit</button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>

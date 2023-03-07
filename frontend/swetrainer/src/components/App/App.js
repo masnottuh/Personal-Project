@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Dashboard from '../NavPages/Dashboard';
 import Login from '../Login/Login';
@@ -6,25 +6,11 @@ import useToken from './useToken';
 import About from '../NavPages/About';
 import JobBoard from '../NavPages/JobBoard';
 import InterviewQuestions from '../NavPages/InterviewQuestions';
-import Logout from '../Login/Logout'
-
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logout_user from '../Login/Logout';
-
-
-function setToken(userToken) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
 
 function App() {
 
@@ -67,6 +53,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
+          <Route path="/Dashboard" element={<Dashboard/>}/>
           <Route path="/JobBoard" element={<JobBoard/>}/>
           <Route path="/InterviewQuestions" element={<InterviewQuestions/>}/>
           <Route path="/About" element={<About/>}/>

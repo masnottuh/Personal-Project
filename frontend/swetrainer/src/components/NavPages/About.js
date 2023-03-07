@@ -1,10 +1,10 @@
 import React from 'react';
 const About = () =>{
   return (
-    <div>
+    <div className="centered">
       <h3>About SWEtrainer</h3>
       <div>
-        About info here
+        SWEtrainer is a website designed to help junior software engineers practice their craft and land their first job! Please check out the sections on this site to access the tools.
       </div>
     </div>
   );
