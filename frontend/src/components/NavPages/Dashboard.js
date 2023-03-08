@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-const advice_url = 'http://api.adviceslip.com/advice';
+const advice_url = 'https://api.adviceslip.com/advice';
 
 function GiveAdvice() {
 
