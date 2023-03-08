@@ -1,9 +1,8 @@
 # Personal-Project
 Code Platoon Personal Project
 
-todo:
-add dashboard page
-restyle job postings page
-interview question generator
-create about page
-fix authentication using DRF auth instead of node
+urgent issues:
+cannot make post request to jobboard or auth api
+
+minor issues:
+chaining of urls for some reason, is breaking site
