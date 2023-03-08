@@ -1,5 +1,5 @@
-export const API_URL = "http://localhost/api/JobBoard/";
+export const API_URL = "http://localhost:8000/api/JobBoard/";
 
 // export const SIGNUP_URL = "http://localhost:8000/accounts/signup"
 
-export const TOKEN_URL = "http://localhost/accounts/get-token"
+export const TOKEN_URL = "http://localhost:8000/accounts/get-token"
