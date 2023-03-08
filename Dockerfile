@@ -39,18 +39,15 @@ FROM nginx:alpine
 
 RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
-
-RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y nodejs \
-    npm       
+RUN pip3 install --no-cache --upgrade pip setuptools      
 
 COPY ./backend/requirements.txt .
 RUN pip install -r requirements.txt
 COPY ./backend .
-RUN python manage.py makemigrations && python manage.py migrate
+RUN python manage.py makemigrations
+RUN python manage.py migrate
 
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /frontend/build /usr/share/nginx/html
 
-CMD nohup gunicorn --bind=0.0.0.0:8000 wines.wsgi:application & nginx -g 'daemon off;'
+CMD nohup gunicorn --bind=0.0.0.0:8000 SWEtrainer.wsgi:application & nginx -g 'daemon off;'
